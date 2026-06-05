@@ -3,6 +3,6 @@
     "name": "Bottle NPCs",
     "version": "1.0.0",
     "author": "DevL0rd",
-    "about": "Bottle an NPC and release it later. Swing a bottle while Z-targeting an NPC to bottle it; swing with nothing targeted to release the last one.",
+    "about": "Bottle an NPC or enemy and release it later. Swing a bottle while Z-targeting one to bottle it; swing with nothing targeted to release the last one.",
     "library": "bottle_npcs"
 }

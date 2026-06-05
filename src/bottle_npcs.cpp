@@ -112,13 +112,19 @@ void release() {
     log_msg(buf);
 }
 
-// Hook: the bottle swing. Capture a Z-targeted NPC, or release when swinging at
-// nothing.
+// Which actors can be bottled: NPCs and enemies (not the player, world, etc.).
+bool is_bottleable(fopAc_ac_c* actor) {
+    const u8 group = fopAcM_GetGroup(actor);
+    return group == fopAc_NPC_e || group == fopAc_ENEMY_e;
+}
+
+// Hook: the bottle swing. Capture a Z-targeted NPC or enemy, or release when
+// swinging at nothing.
 int detour_swing(void* self, fopAc_ac_c* catchActor, int arg) {
     const int ret = g_orig_swing(self, catchActor, arg);
 
     fopAc_ac_c* look = dComIfGp_att_getLookTarget();
-    if (look != nullptr && fopAcM_GetGroup(look) == fopAc_NPC_e) {
+    if (look != nullptr && is_bottleable(look)) {
         capture(look);
     } else if (look == nullptr && dComIfGp_att_getCatghTarget() == nullptr) {
         release();

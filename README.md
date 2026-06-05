@@ -1,21 +1,21 @@
 # Bottle NPCs
 
 A native [Dusklight](https://github.com/TwilitRealm/dusklight) mod that lets you
-**bottle an NPC and release it later**, in the spirit of catching bugs or
-fairies.
+**bottle an NPC or enemy and release it later**, in the spirit of catching bugs
+or fairies.
 
 Bottles in the game store fixed content *types*, not arbitrary actors, so this
-mod keeps its own stack of captured NPCs rather than touching the bottle
+mod keeps its own stack of captured actors rather than touching the bottle
 inventory. It's a **detour mod**: Dusklight exports its symbols, so it hooks the
 bottle-swing function at runtime (via [funchook](https://github.com/kubo/funchook))
 and calls game code directly through the game's own headers.
 
 ## How to use
 
-- **Bottle an NPC:** Z-target an NPC and swing a bottle — the NPC is removed and
+- **Bottle:** Z-target an NPC or enemy and swing a bottle — it's removed and
   stored.
 - **Release:** swing a bottle with nothing targeted — the most recently bottled
-  NPC reappears in front of you (with its original profile and parameters; it
+  actor reappears in front of you (with its original profile and parameters; it
   reinitializes fresh, so it won't remember prior state).
 
 > A bottled NPC is recreated from its profile + parameters, not its live state.
