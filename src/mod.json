@@ -4,5 +4,7 @@
     "version": "1.0.0",
     "author": "DevL0rd",
     "description": "Bottle almost any actor and dump it back out later. Swing an empty bottle while Z-targeting an in-range actor to capture it (the bottle becomes a Red Chu); use that bottle to pour the actor back out in front of you.",
-    "has_code": true
+    "has_code": true,
+    "priority": 0,
+    "dependencies": []
 }
