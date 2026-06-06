@@ -21,7 +21,7 @@ mod keeps the captured actor itself and uses a Red Chu bottle purely as the
 
 ## Settings
 
-Declared in code and shown in the **Mods** tab:
+Declared in code and shown in the **Mods** window:
 
 | Setting | Default | Description |
 | --- | --- | --- |
@@ -50,7 +50,8 @@ That packages `bottle_npcs.dusk` straight into the game's mods folder
 (`~/.local/share/TwilitRealm/Dusklight/mods` by default — override with
 `MODS_DIR`, and the Dusklight path with `DUSK_DIR`). The running game
 **hot-reloads** the mod when the package changes. The mod is enabled by default;
-its enabled state and settings are saved by the game under `mods/.config/`.
+the game saves its settings under `mods/.config/` and tracks whether it's enabled
+in its own config.
 
 ## Files
 
